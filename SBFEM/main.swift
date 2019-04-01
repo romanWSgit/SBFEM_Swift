@@ -16,8 +16,7 @@ import simd
 /// Machine Double Precission Epsilon
 let eps64:Double = Double.ulpOfOne
 
-/// ...
-// FIXME: What is 'sd' ???
+/// spatial Dimension
 let sd: Int = 2
 /// polynominal Order
 let poly_ord: Int = 1
@@ -128,8 +127,7 @@ func points_table(poly_ord: Int) -> [Double] {
 //print(points_table(poly_ord: 10))
 
 
-// MARK: Converted Stuff from C to Swift for numerical integration
-var Pi:Double = atan2(1, 1) * 4
+// MARK: - NUMERICAL INTEGRATION
 let N:Int = 2
 var lroots:[Double] = Array(repeating: 0, count: N)
 var weight:[Double] = Array(repeating: 0, count: N)
@@ -167,7 +165,7 @@ func lege_roots()
     var x, x1: Double
     for index in 1...N
     {
-        x = cos(Pi * (Double(index) - 0.25) / (Double(N) + 0.5))
+        x = cos(Double.pi * (Double(index) - 0.25) / (Double(N) + 0.5))
         repeat
         {
             x1 = x
