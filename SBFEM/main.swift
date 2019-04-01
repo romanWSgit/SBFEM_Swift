@@ -1,55 +1,64 @@
-///
-///  main.swift
-///  SBFEM
-///
-///  Created by Roman Wallner- Silberhuber on 27.03.19.
-///  Copyright © 2019 Roman Wallner- Silberhuber. All rights reserved.
-///
+//
+//  main.swift
+//  SBFEM
+//
+//  Created by Roman Wallner- Silberhuber on 27.03.19.
+//  Copyright © 2019 Roman Wallner- Silberhuber. All rights reserved.
+//
 
+// MARK: - IMPORT SECTION
 import Foundation
 import Accelerate
 import simd
 
 
+// MARK: - PARAMS
+/// Machine Double Precission Epsilon
+let eps64:Double = Double.ulpOfOne
 
+/// ... 
+let sd: Int = 2
+/// polynominal Order
+let poly_ord: Int = 1
+/// number of elements
+let ielem: Int = 10
+/// number of nodes per element
+let nodeElem: Int = 2
+/// number of all nodes in the domain
+let nodedim: Int = 10
+/// number of elements in 'a' - direction (horizontal)
+let a: Double = 4
+/// number of elements in 'b' - direction (vertical)
+let b: Double = 1
+// lengths in 'a' - direction (horizontal)
+let l: Double = 24
+// width in 'b' - direction (horizontal)
+let d: Double = 6
 
-
-var eps64:Double = Double.ulpOfOne
-
-let sd:Int = 2
-let poly_ord:Int = 1
-let ielem:Int = 10
-let nodeElem:Int = 2
-let nodedim:Int = 10
-let a:Double = 4
-let b:Double = 1
-let l:Double = 24
-let d:Double = 6
-
-let offset:[Double] = [0,0]
-let centre:[Double] = [0,0]
+let offset: [Double] = [0,0]
+let centre: [Double] = [0,0]
 let shapefct = "standard shape functions"
 // Material
-let Em:Double = 10000
-let nu:Double = 0.2
-let rho:Double = 1
-let Er:Double = Em
-let rr:Double = 1
-let rhor:Double = rho
+let Em: Double = 10000
+let nu: Double = 0.2
+let rho: Double = 1
+let Er: Double = Em
+let rr: Double = 1
+let rhor: Double = rho
 
-/// Lagrange polynomials
-///
-/// Creates a personalized greeting for a recipient.
-///
-/// - Parameter:
-///     - x : The *x* component ...
-///
-///
-///
-///
-/// - Returns: A new string saying hello to `recipient`.
-
-
+// MARK: - SERVICE FUNCTIONS
+/**
+ Initializes a new bicycle with the provided parts and specifications.
+ 
+ - Parameters:
+ - style: The style of the bicycle
+ - gearing: The gearing of the bicycle
+ - handlebar: The handlebar of the bicycle
+ - frameSize: The frame size of the bicycle, in centimeters
+ 
+ - Returns: A beautiful, brand-new bicycle,
+ custom-built just for you.
+ */
 func def_lagrange(x: Double, i: Int, xm: [Double]) -> Double {
     let n:Int = xm.count
     var y:Double = 1
@@ -61,7 +70,18 @@ func def_lagrange(x: Double, i: Int, xm: [Double]) -> Double {
     return y
 }
 
-
+/**
+ Initializes a new bicycle with the provided parts and specifications.
+ 
+ - Parameters:
+ - style: The style of the bicycle
+ - gearing: The gearing of the bicycle
+ - handlebar: The handlebar of the bicycle
+ - frameSize: The frame size of the bicycle, in centimeters
+ 
+ - Returns: A beautiful, brand-new bicycle,
+ custom-built just for you.
+ */
 func lagrange_diff(x: Double, i: Int, xm: [Double]) -> Double {
     var k:Double = 0
     let n:Int = xm.count
@@ -80,7 +100,18 @@ func lagrange_diff(x: Double, i: Int, xm: [Double]) -> Double {
     return y
 }
 
-
+/**
+ Initializes a new bicycle with the provided parts and specifications.
+ 
+ - Parameters:
+ - style: The style of the bicycle
+ - gearing: The gearing of the bicycle
+ - handlebar: The handlebar of the bicycle
+ - frameSize: The frame size of the bicycle, in centimeters
+ 
+ - Returns: A beautiful, brand-new bicycle,
+ custom-built just for you.
+ */
 func points_table(poly_ord: Int) -> [Double] {
     var pointsTable:[Double] = []
     var result:Double = 0
@@ -102,7 +133,7 @@ var Pi:Double = atan2(1, 1) * 4
 let N:Int = 2
 var lroots:[Double] = Array(repeating: 0, count: N)
 var weight:[Double] = Array(repeating: 0, count: N)
-var lcoef:[[Double]] = Array(repeating: Array(repeating: 0, count: N), count: N)
+var lcoef:[[Double]] = Array(repeating: Array(repeating: 0, count: N + 1), count: N + 1)
 
 func lege_coef()
 {
@@ -111,7 +142,7 @@ func lege_coef()
     for n in 2...N {
         lcoef[n][0] = -1 * Double(n - 1) * (Double(lcoef[n - 2][0]) / Double(n))
         for i in 1...n {
-            lcoef[n][i] = Double((2 * n - 1)) * Double(lcoef[n - 1][i - 1]) - Double(n - 1) *  Double(lcoef[n - 2][i]) / Double(n)
+            lcoef[n][i] = (Double((2 * n - 1)) * Double(lcoef[n - 1][i - 1]) - Double(n - 1) *  Double(lcoef[n - 2][i])) / Double(n)
         }
     }
 }
@@ -127,7 +158,7 @@ func lege_eval(n: Int, x: Double) -> Double
 
 func lege_diff(n: Int, x: Double) -> Double
 {
-    let res:Double = Double(n) * (x * lege_eval(n: n, x: x) - lege_eval(n: n - 1, x: x)) / (x * x - 1)
+    let res: Double = Double(n) * (x * lege_eval(n: n, x: x) - lege_eval(n: n - 1, x: x)) / (x * x - 1)
     return res
 }
 
@@ -139,12 +170,12 @@ func lege_roots()
         x = cos(Pi * (Double(index) - 0.25) / (Double(N) + 0.5))
         repeat
         {
-            x1 = x;
+            x1 = x
             x -= lege_eval(n: N, x: x) / lege_diff(n: N, x: x)
-            } while ( fdim( x, x1) > 2e-16 )
+        } while ( fdim( x, x1) > 2e-16 )
             /*  fdim( ) was introduced in C99, if it isn't available
              *  on your system, try fabs( ) */
-            lroots[index - 1] = x
+        lroots[index - 1] = x
             
         x1 = lege_diff(n: N, x: x)
         weight[index - 1] = 2 / ((1 - x * x) * x1 * x1)
@@ -159,6 +190,8 @@ func lege_roots()
 //    sum += weight[i] * f(c1 * lroots[i] + c2);
 //    return c1 * sum;
 //}
+lege_coef()
+lege_roots()
 
 print("Roots: ");
 for index in 0..<N {
