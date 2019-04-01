@@ -16,7 +16,8 @@ import simd
 /// Machine Double Precission Epsilon
 let eps64:Double = Double.ulpOfOne
 
-/// ... 
+/// ...
+// FIXME: What is 'sd' ???
 let sd: Int = 2
 /// polynominal Order
 let poly_ord: Int = 1
@@ -128,7 +129,6 @@ func points_table(poly_ord: Int) -> [Double] {
 
 
 // MARK: Converted Stuff from C to Swift for numerical integration
-// FIXME: This Shit is not workin
 var Pi:Double = atan2(1, 1) * 4
 let N:Int = 2
 var lroots:[Double] = Array(repeating: 0, count: N)
@@ -190,6 +190,8 @@ func lege_roots()
 //    sum += weight[i] * f(c1 * lroots[i] + c2);
 //    return c1 * sum;
 //}
+
+// MARK: - RUN
 lege_coef()
 lege_roots()
 
@@ -203,11 +205,3 @@ for index in 0..<N {
 }
 print("\n")
 
-
-//printf("\nWeight:");
-//for (i = 0; i < N; i++)
-//printf(" %g", weight[i]);
-//
-//printf("\nintegrating Exp(x) over [-3, 3]:\n\t%10.8f,\n"
-//"compred to actual\n\t%10.8f\n",
-//lege_inte(exp, -3, 3), exp(3) - exp(-3));
