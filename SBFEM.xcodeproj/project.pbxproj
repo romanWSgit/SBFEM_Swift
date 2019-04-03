@@ -12,7 +12,69 @@
 		6145A47D2253550D00AF5109 /* geometryFct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145A47C2253550D00AF5109 /* geometryFct.swift */; };
 		6145A47F2253552D00AF5109 /* numericalIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145A47E2253552D00AF5109 /* numericalIntegration.swift */; };
 		6145A4812253559200AF5109 /* shapeFct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145A4802253559200AF5109 /* shapeFct.swift */; };
+		615DBAD32254BCE9001C9AD9 /* sbfemDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DBAD22254BCE9001C9AD9 /* sbfemDriver.swift */; };
+		61AAF1232254DE9300F1670E /* Surge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61AAF1192254DE7A00F1670E /* Surge.framework */; };
+		61AAF1272254F02300F1670E /* math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AAF1262254F02300F1670E /* math.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61AAF1142254DE7A00F1670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8A1E1AA19917A79009735E2;
+			remoteInfo = "Surge-iOS";
+		};
+		61AAF1162254DE7A00F1670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F84A6AAE19A9A72F007B53E1;
+			remoteInfo = "SurgeTests-iOS";
+		};
+		61AAF1182254DE7A00F1670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 614AD31F1FC0AD99002BFE1C;
+			remoteInfo = "Surge-macOS";
+		};
+		61AAF11A2254DE7A00F1670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 614AD3271FC0AD99002BFE1C;
+			remoteInfo = "SurgeTests-macOS";
+		};
+		61AAF11C2254DE7A00F1670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 614AD3511FC0B001002BFE1C;
+			remoteInfo = "Surge-tvOS";
+		};
+		61AAF11E2254DE7A00F1670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 614AD3591FC0B001002BFE1C;
+			remoteInfo = "SurgeTests-tvOS";
+		};
+		61AAF1202254DE7A00F1670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 614AD3821FC0B125002BFE1C;
+			remoteInfo = "Surge-watchOS";
+		};
+		61AAF1242254DEB000F1670E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 614AD31E1FC0AD99002BFE1C;
+			remoteInfo = "Surge-macOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		613A25EC224BA3D000763396 /* CopyFiles */ = {
@@ -33,6 +95,9 @@
 		6145A47C2253550D00AF5109 /* geometryFct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geometryFct.swift; sourceTree = "<group>"; };
 		6145A47E2253552D00AF5109 /* numericalIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numericalIntegration.swift; sourceTree = "<group>"; };
 		6145A4802253559200AF5109 /* shapeFct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shapeFct.swift; sourceTree = "<group>"; };
+		615DBAD22254BCE9001C9AD9 /* sbfemDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sbfemDriver.swift; sourceTree = "<group>"; };
+		61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Surge.xcodeproj; path = "../../../Downloads/Surge-master/Surge.xcodeproj"; sourceTree = "<group>"; };
+		61AAF1262254F02300F1670E /* math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = math.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61AAF1232254DE9300F1670E /* Surge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,8 +115,10 @@
 		613A25E5224BA3D000763396 = {
 			isa = PBXGroup;
 			children = (
+				61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */,
 				613A25F0224BA3D000763396 /* SBFEM */,
 				613A25EF224BA3D000763396 /* Products */,
+				61AAF1222254DE9300F1670E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,11 +135,34 @@
 			children = (
 				613A25F1224BA3D000763396 /* main.swift */,
 				6145A4802253559200AF5109 /* shapeFct.swift */,
+				615DBAD22254BCE9001C9AD9 /* sbfemDriver.swift */,
 				6145A47A225353CF00AF5109 /* supportingFct.swift */,
 				6145A47C2253550D00AF5109 /* geometryFct.swift */,
 				6145A47E2253552D00AF5109 /* numericalIntegration.swift */,
+				61AAF1262254F02300F1670E /* math.swift */,
 			);
 			path = SBFEM;
+			sourceTree = "<group>";
+		};
+		61AAF10B2254DE7A00F1670E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61AAF1152254DE7A00F1670E /* Surge.framework */,
+				61AAF1172254DE7A00F1670E /* SurgeTests-iOS.xctest */,
+				61AAF1192254DE7A00F1670E /* Surge.framework */,
+				61AAF11B2254DE7A00F1670E /* SurgeTests-macOS.xctest */,
+				61AAF11D2254DE7A00F1670E /* Surge.framework */,
+				61AAF11F2254DE7A00F1670E /* SurgeTests-tvOS.xctest */,
+				61AAF1212254DE7A00F1670E /* Surge.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61AAF1222254DE9300F1670E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,13 +172,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 613A25F5224BA3D000763396 /* Build configuration list for PBXNativeTarget "SBFEM" */;
 			buildPhases = (
-				613A25EA224BA3D000763396 /* Sources */,
 				613A25EB224BA3D000763396 /* Frameworks */,
+				613A25EA224BA3D000763396 /* Sources */,
 				613A25EC224BA3D000763396 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				61AAF1252254DEB000F1670E /* PBXTargetDependency */,
 			);
 			name = SBFEM;
 			productName = SBFEM;
@@ -120,12 +212,70 @@
 			mainGroup = 613A25E5224BA3D000763396;
 			productRefGroup = 613A25EF224BA3D000763396 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 61AAF10B2254DE7A00F1670E /* Products */;
+					ProjectRef = 61AAF10A2254DE7A00F1670E /* Surge.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				613A25ED224BA3D000763396 /* SBFEM */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		61AAF1152254DE7A00F1670E /* Surge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Surge.framework;
+			remoteRef = 61AAF1142254DE7A00F1670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61AAF1172254DE7A00F1670E /* SurgeTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SurgeTests-iOS.xctest";
+			remoteRef = 61AAF1162254DE7A00F1670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61AAF1192254DE7A00F1670E /* Surge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Surge.framework;
+			remoteRef = 61AAF1182254DE7A00F1670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61AAF11B2254DE7A00F1670E /* SurgeTests-macOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SurgeTests-macOS.xctest";
+			remoteRef = 61AAF11A2254DE7A00F1670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61AAF11D2254DE7A00F1670E /* Surge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Surge.framework;
+			remoteRef = 61AAF11C2254DE7A00F1670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61AAF11F2254DE7A00F1670E /* SurgeTests-tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SurgeTests-tvOS.xctest";
+			remoteRef = 61AAF11E2254DE7A00F1670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61AAF1212254DE7A00F1670E /* Surge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Surge.framework;
+			remoteRef = 61AAF1202254DE7A00F1670E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		613A25EA224BA3D000763396 /* Sources */ = {
@@ -137,10 +287,20 @@
 				6145A47F2253552D00AF5109 /* numericalIntegration.swift in Sources */,
 				613A25F2224BA3D000763396 /* main.swift in Sources */,
 				6145A47B225353CF00AF5109 /* supportingFct.swift in Sources */,
+				615DBAD32254BCE9001C9AD9 /* sbfemDriver.swift in Sources */,
+				61AAF1272254F02300F1670E /* math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		61AAF1252254DEB000F1670E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Surge-macOS";
+			targetProxy = 61AAF1242254DEB000F1670E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		613A25F3224BA3D000763396 /* Debug */ = {

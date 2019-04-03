@@ -29,3 +29,6 @@ func pointTable(generatedFromPolyOrd polyOrd: Int) -> [Double] {
     }
     return pointsTableVar
 }
+
+
+

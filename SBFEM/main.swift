@@ -10,6 +10,7 @@
 import Foundation
 import Accelerate
 import simd
+import Surge
 
 
 // MARK: - PARAMS
@@ -19,7 +20,7 @@ let eps64 = Double.ulpOfOne
 /// spatial Dimension
 let sd = 2
 /// polynominal Order
-let polyOrd = 2
+let polyOrd = 1
 /// number of elements
 let ielem = 10
 /// number of nodes per element
@@ -64,3 +65,6 @@ print("\n\nWeight:");
 print(weights)
 print("\n")
 printMatrix(shapeFunctionsAndDerivatives(fromEta: 1, andPolyOrd: 2, calcDeriv: false).shapeMat)
+printMatrix([rHatC(circumferentialCoordianteEta: 0.5, radialCoordinateXi: 1, coordianteOfElementsPoints: [-12.0, -3.0, -6.0, -3.0], withScalingCentre: [0.0, 0.0])] )
+
+
