@@ -9,7 +9,7 @@
 import Foundation
 // MARK: - NUMERICAL INTEGRATION
 func getRootsAndWeights(forIntegrationOrder N: Int) -> (Roots: [Double], Weights: [Double]) {
-    let (roots, weights) = lege_roots(forIntegrationOrder: N, forCoefficentArray: calculateCoefficients(forIntegrationOrder: N))
+    let (roots, weights) = legeRoots(forIntegrationOrder: N, forCoefficentArray: calculateCoefficients(forIntegrationOrder: N))
     return (roots, weights)
 }
 
@@ -45,7 +45,7 @@ func evalEdgeDifference(withSeperations n: Int, atPoint x: Double, forCoefficent
     return res
 }
 
-func lege_roots(forIntegrationOrder N: Int, forCoefficentArray lcoef: [[Double]]) -> (weights: [Double], roots: [Double])
+func legeRoots(forIntegrationOrder N: Int, forCoefficentArray lcoef: [[Double]]) -> (weights: [Double], roots: [Double])
 {
     var roots:[Double] = Array(repeating: 0, count: N)
     var weights:[Double] = Array(repeating: 0, count: N)

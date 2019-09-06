@@ -8,7 +8,8 @@
 
 import Foundation
 
-func lagrangeInterpolate(atPoint x: Double, withPolyOrd i: Int, atDataPoints xm: [Double],  calcDeriv deriv: Bool) -> Double {
+func lagrangeInterpolate(atPoint x: Double, withPolyOrd i: Int, atDataPoints xm: [Double],
+                         calcDeriv deriv: Bool) -> Double {
     let n:Int = xm.count
     var y:Double
     if deriv {
@@ -38,17 +39,23 @@ func lagrangeInterpolate(atPoint x: Double, withPolyOrd i: Int, atDataPoints xm:
 }
 
 
-func shapeFunctionsAndDerivatives(fromEta eta: Double, andPolyOrd polyOrd: Int, calcDeriv deriv: Bool) ->
-    (shapVec: [Double], shapeMat: [[Double]]) {
+func shapeFunctionsAndDerivatives(fromEta eta: Double, andPolyOrd polyOrd: Int,
+                                  calcDeriv deriv: Bool)-> (shapeVec: [Double], shapeMat: [[Double]]) {
         var nVec: [Double] = []
         var resultMEven: [Double] = []
         var resultMUnEven: [Double] = []
         var nMat: [[Double]] = []
         var result: Double
         for index in 0...polyOrd {
-            result = lagrangeInterpolate(atPoint: eta, withPolyOrd: index, atDataPoints: pointTable(generatedFromPolyOrd: polyOrd), calcDeriv: false)
+            result = lagrangeInterpolate(atPoint: eta, withPolyOrd: index,
+                                         atDataPoints:
+                pointTable(generatedFromPolyOrd: polyOrd),
+                                         calcDeriv: false)
             if deriv {
-                result = lagrangeInterpolate(atPoint: eta, withPolyOrd: index, atDataPoints: pointTable(generatedFromPolyOrd: polyOrd), calcDeriv: true)
+                result = lagrangeInterpolate(atPoint: eta, withPolyOrd: index,
+                                             atDataPoints:
+                    pointTable(generatedFromPolyOrd: polyOrd),
+                                             calcDeriv: true)
             }
             resultMEven += [result]
             resultMEven += [0.0]

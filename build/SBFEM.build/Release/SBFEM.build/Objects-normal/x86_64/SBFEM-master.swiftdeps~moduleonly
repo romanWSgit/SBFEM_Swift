@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
+options: "ff65507e60c11a830121978d9b4b562f"
+build_time: [1553972532, 528811000]
+inputs:
+  "/Users/roman_w_s/CODE/SWIFT/SBFEM/SBFEM/SBFEM/main.swift": [9223372036, 854775807]
