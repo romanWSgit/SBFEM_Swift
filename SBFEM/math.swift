@@ -125,8 +125,8 @@ func matrixTimesMatrixPlusC(ofMatrix A: [[Double]], withMatrix B: [[Double]], ad
 }
 
 func matrixAdd(ofMatrix A: [[Double]], withMatrix B: [[Double]]) -> [[Double]] {
-    var a: [Double] = Array(A.joined())
-    var b: [Double] = Array(B.joined())
+    let a: [Double] = Array(A.joined())
+    let b: [Double] = Array(B.joined())
     var c: [Double] = Array(repeating: 0, count: A.count * B[0].count)
     for i in 0..<a.count {
             c[i] = a[i] + b[i]

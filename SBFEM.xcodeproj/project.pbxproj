@@ -14,7 +14,8 @@
 		6145A47F2253552D00AF5109 /* numericalIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145A47E2253552D00AF5109 /* numericalIntegration.swift */; };
 		6145A4812253559200AF5109 /* shapeFct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145A4802253559200AF5109 /* shapeFct.swift */; };
 		615DBAD32254BCE9001C9AD9 /* sbfemDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615DBAD22254BCE9001C9AD9 /* sbfemDriver.swift */; };
-		61AAF1272254F02300F1670E /* math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AAF1262254F02300F1670E /* math.swift */; };
+		618F0D1924575E7D001BBF97 /* testMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F0D1824575E7D001BBF97 /* testMath.swift */; };
+		618F0D212458370D001BBF97 /* math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618F0D1F2458308F001BBF97 /* math.swift */; };
 		61DA99FF225D338700B431AD /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DA99FE225D338700B431AD /* extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +40,8 @@
 		6145A47E2253552D00AF5109 /* numericalIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numericalIntegration.swift; sourceTree = "<group>"; };
 		6145A4802253559200AF5109 /* shapeFct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shapeFct.swift; sourceTree = "<group>"; };
 		615DBAD22254BCE9001C9AD9 /* sbfemDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sbfemDriver.swift; sourceTree = "<group>"; };
-		61AAF1262254F02300F1670E /* math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = math.swift; sourceTree = "<group>"; };
+		618F0D1824575E7D001BBF97 /* testMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testMath.swift; sourceTree = "<group>"; };
+		618F0D1F2458308F001BBF97 /* math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = math.swift; sourceTree = "<group>"; };
 		61AAF130225505D700F1670E /* SBFEMPlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SBFEMPlay.h; sourceTree = "<group>"; };
 		61AAF131225505D700F1670E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61DA99FE225D338700B431AD /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
@@ -84,7 +86,8 @@
 				6145A47A225353CF00AF5109 /* supportingFct.swift */,
 				6145A47C2253550D00AF5109 /* geometryFct.swift */,
 				6145A47E2253552D00AF5109 /* numericalIntegration.swift */,
-				61AAF1262254F02300F1670E /* math.swift */,
+				618F0D1F2458308F001BBF97 /* math.swift */,
+				618F0D1824575E7D001BBF97 /* testMath.swift */,
 				61DA99FE225D338700B431AD /* extensions.swift */,
 			);
 			path = SBFEM;
@@ -133,7 +136,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Roman Wallner- Silberhuber";
 				TargetAttributes = {
 					613A25ED224BA3D000763396 = {
@@ -168,12 +171,13 @@
 				6141F03A225CA3F200E9D851 /* material.swift in Sources */,
 				6145A4812253559200AF5109 /* shapeFct.swift in Sources */,
 				6145A47D2253550D00AF5109 /* geometryFct.swift in Sources */,
+				618F0D1924575E7D001BBF97 /* testMath.swift in Sources */,
 				6145A47F2253552D00AF5109 /* numericalIntegration.swift in Sources */,
+				618F0D212458370D001BBF97 /* math.swift in Sources */,
 				613A25F2224BA3D000763396 /* main.swift in Sources */,
 				61DA99FF225D338700B431AD /* extensions.swift in Sources */,
 				6145A47B225353CF00AF5109 /* supportingFct.swift in Sources */,
 				615DBAD32254BCE9001C9AD9 /* sbfemDriver.swift in Sources */,
-				61AAF1272254F02300F1670E /* math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +210,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -267,6 +272,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -299,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63HMU479MC;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 63HMU479MC;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -70,7 +70,7 @@ func getIx(fromMatrix a: [[Double]], indexVector idx: [Int]) -> [[Double]] {
 
 func addAtIx(inMatrix a: [[Double]], insertMatrix insert: [[Double]], atIndex idx: [Int]) -> [[Double]] {
     var aMod = a
-    var insertFlat: [Double] = Array(insert.joined())
+    let insertFlat: [Double] = Array(insert.joined())
     var cntN = 0
     for i in idx {
         for j in idx {
