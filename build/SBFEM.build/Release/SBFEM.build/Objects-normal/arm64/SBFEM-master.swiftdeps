@@ -1,0 +1,15 @@
+version: "Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)"
+options: "baaf65a5df3214417f4dfd945803888365faacaaf6821bd253b59425b54fddaa"
+build_start_time: [1695027140, 991483000]
+build_end_time: [1695027146, 118358000]
+inputs:
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/extensions.swift": [1554840588, 0]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/geometryFct.swift": [1556018379, 0]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/main.swift": [1673990593, 923123934]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/material.swift": [1557671496, 0]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/math.swift": [1695027092, 409749211]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/numericalIntegration.swift": [1556019829, 0]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/sbfemDriver.swift": [1559682174, 0]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/shapeFct.swift": [1615355484, 0]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/supportingFct.swift": [1588068314, 0]
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/testMath.swift": [1673689611, 398233168]

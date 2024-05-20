@@ -1,0 +1,60 @@
+{
+  "" : {
+    "const-values" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master.swiftconstvalues",
+    "dependencies" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master.d",
+    "diagnostics" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master.dia",
+    "emit-module-dependencies" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master-emit-module.dia",
+    "swift-dependencies" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master.swiftdeps"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/extensions.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/extensions.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/extensions.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/extensions.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/geometryFct.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/geometryFct.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/geometryFct.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/geometryFct.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/main.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/main.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/main.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/main.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/material.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/material.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/material.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/material.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/math.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/math.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/math.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/math.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/numericalIntegration.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/numericalIntegration.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/numericalIntegration.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/numericalIntegration.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/sbfemDriver.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/sbfemDriver.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/sbfemDriver.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/sbfemDriver.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/shapeFct.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/shapeFct.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/shapeFct.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/shapeFct.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/supportingFct.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/supportingFct.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/supportingFct.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/supportingFct.o"
+  },
+  "/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/testMath.swift" : {
+    "index-unit-output-path" : "/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/testMath.o",
+    "llvm-bc" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/testMath.bc",
+    "object" : "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/testMath.o"
+  }
+}

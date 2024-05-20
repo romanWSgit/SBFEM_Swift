@@ -15,8 +15,8 @@
             timestampString = "588517766.627014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
             landmarkName = "unknown"
             landmarkType = "0">
             <Locations>
@@ -33,8 +33,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "331"
-                  endingLineNumber = "331"
-                  offsetFromSymbolStart = "63169">
+                  endingLineNumber = "331">
                </Location>
                <Location
                   uuid = "D9081BF6-F83A-4854-9DCE-1E227DFD4E42 - 782c176e19798e49"
@@ -49,8 +48,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "331"
-                  endingLineNumber = "331"
-                  offsetFromSymbolStart = "31">
+                  endingLineNumber = "331">
                </Location>
                <Location
                   uuid = "D9081BF6-F83A-4854-9DCE-1E227DFD4E42 - 95a3cace929e96b"
@@ -65,8 +63,7 @@
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "331"
-                  endingLineNumber = "331"
-                  offsetFromSymbolStart = "17">
+                  endingLineNumber = "331">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -82,27 +79,10 @@
             timestampString = "588517766.627851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "427"
-            endingLineNumber = "427"
+            startingLineNumber = "452"
+            endingLineNumber = "452"
             landmarkName = "unknown"
             landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4BA8BA2B-C26C-4855-9A35-9C689DA15738"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SBFEM/math.swift"
-            timestampString = "588517766.628279"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "invertComplexMatrix(ofRealMatrix:andofImagMatrix:)"
-            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -116,8 +96,8 @@
             timestampString = "588517766.6283261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -133,8 +113,8 @@
             timestampString = "588517766.6287121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -149,8 +129,8 @@
             filePath = "SBFEM/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -165,8 +145,8 @@
             filePath = "SBFEM/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>
@@ -181,8 +161,40 @@
             filePath = "SBFEM/main.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80F3277F-EE37-41B4-9DE9-DAD0C6889665"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SBFEM/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BA0492A-C646-42B0-A073-B315AA0D937D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SBFEM/main.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>

@@ -10,11 +10,26 @@ import Foundation
 import Accelerate
 import simd
 
+/// Adds two vectors using the cblas_daxpy function.
+///
+/// This function computes a vector `Ynew` such that:
+/// `Ynew = alpha * X + Y` where `alpha` is a scalar (in this case, 1.0).
+///
+/// - Parxameters:
+///   - X: The first vector to be added.
+///   - Y: The second vector which will be updated with the result.
+/// - Returns: The resulting vector after the addition.
 func vectorAdd(ofVectorX X: [Double], withVectorY Y: [Double]) -> [Double] {
     var x:[Double] = X
     var y:[Double] = Y
     let dx = x.count
-    cblas_daxpy(Int32(dx), 1.0, &x, Int32(1), &y, Int32(1))
+    if #available(macOS 13.3, *) {
+        cblas_daxpy(__LAPACK_int(Int32(dx)), 1.0, &x, __LAPACK_int(Int32(1)), &y, __LAPACK_int(Int32(1)))
+    } else {
+        // Log error to console or notify user
+        print("Error: This application requires macOS 13.3 or later to function properly.")
+        fatalError("Unsupported macOS version")
+    }
     let Ynew: [Double] = y
     return Ynew
 }
@@ -22,7 +37,13 @@ func vectorAdd(ofVectorX X: [Double], withVectorY Y: [Double]) -> [Double] {
 func scalarTimesVector(ofScalar alpha: Double, withVector X: [Double]) -> [Double] {
     var x:[Double] = X
     let dx = x.count
-    cblas_dscal(Int32(dx), alpha, &x, Int32(1))
+    if #available(macOS 13.3, *) {
+        cblas_dscal(__LAPACK_int(Int32(dx)), alpha, &x, __LAPACK_int(Int32(1)))
+    } else {
+        // Log error to console or notify user
+        print("Error: This application requires macOS 13.3 or later to function properly.")
+        fatalError("Unsupported macOS version")
+    }
     let Xnew: [Double] = x
     return Xnew
 }
@@ -33,7 +54,13 @@ func scalarTimesMatrix(ofScalar beta: Double, withMatrix C: [[Double]]) -> [[Dou
     var b = c
     let dx1 = C.count
     let dx2 = C[0].count
-    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, Int32(dx1), Int32(dx2), Int32(dx1), 0.0, &a,  Int32(dx1), &b, Int32(dx2), beta, &c, Int32(dx2))
+    if #available(macOS 13.3, *) {
+        cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, __LAPACK_int(Int32(dx1)), __LAPACK_int(Int32(dx2)), __LAPACK_int(Int32(dx1)), 0.0, &a,  __LAPACK_int(Int32(dx1)), &b, __LAPACK_int(Int32(dx2)), beta, &c, __LAPACK_int(Int32(dx2)))
+    } else {
+        // Log error to console or notify user
+        print("Error: This application requires macOS 13.3 or later to function properly.")
+        fatalError("Unsupported macOS version")
+    }
     assert(c.count % dx2 == 0)
     let Cnew: [[Double]] = stride(from: 0, to: c.count, by: dx2).map{
         Array(c[$0..<$0+dx2])
@@ -48,12 +75,19 @@ func dotProduct(ofVectorX vectorX: [Double], withVectorY vectorY: [Double]) -> D
     let dx1 = x1.count
     //var X:[Double] = Array(repeating: 0, count: dx1*dx2)
     
-    let Xnew = cblas_ddot( Int32(dx1),
-                           &x1,
-                           1,
-                           &x2,
-                           1 )
-    return Xnew
+    if #available(macOS 13.3, *) {
+        let Xnew = cblas_ddot( __LAPACK_int(Int32(dx1)),
+                               &x1,
+                               1,
+                               &x2,
+                               1 )
+        return Xnew
+    } else {
+        // Log error to console or notify user
+        print("Error: This application requires macOS 13.3 or later to function properly.")
+        fatalError("Unsupported macOS version")
+    }
+    
 }
 
 func dyadicP(withVectorX X: [Double], andVectorY Y: [Double]) -> [[Double]] {
@@ -63,21 +97,28 @@ func dyadicP(withVectorX X: [Double], andVectorY Y: [Double]) -> [[Double]] {
     let dx2 = x2.count
     var X:[Double] = Array(repeating: 0, count: dx1*dx2)
     
-    cblas_dger(CblasRowMajor, /* you’re using row-major storage */
-        Int32(dx1),           /* the matrix X has dx1 rows ...  */
-        Int32(dx2),           /*  ... and dx2 columns.          */
-        1.0,           /* scale factor to apply to x1x2' */
-        &x1,
-        1,             /* stride between elements of x1. */
-        &x2,
-        1,             /* stride between elements of x2. */
-        &X,
-        Int32(dx2))
-    assert(X.count % dx2 == 0)
-    let Xnew: [[Double]] = stride(from: 0, to: X.count, by: dx2).map {
-        Array(X[$0..<$0+dx2])
+    if #available(macOS 13.3, *) {
+        cblas_dger(CblasRowMajor, /* you’re using row-major storage */
+                   __LAPACK_int(Int32(dx1)),           /* the matrix X has dx1 rows ...  */
+                   __LAPACK_int(Int32(dx2)),           /*  ... and dx2 columns.          */
+                   1.0,           /* scale factor to apply to x1x2' */
+                   &x1,
+                   1,             /* stride between elements of x1. */
+                   &x2,
+                   1,             /* stride between elements of x2. */
+                   &X,
+                   __LAPACK_int(Int32(dx2)))
+        assert(X.count % dx2 == 0)
+        let Xnew: [[Double]] = stride(from: 0, to: X.count, by: dx2).map {
+            Array(X[$0..<$0+dx2])
+        }
+        return Xnew
+    } else {
+        // Log error to console or notify user
+        print("Error: This application requires macOS 13.3 or later to function properly.")
+        fatalError("Unsupported macOS version")
     }
-    return Xnew
+    
 }
 
 func matrixVectorProduct(ofMatrixA A: [[Double]], withVectorX X: [Double]) -> [Double] {
@@ -86,9 +127,16 @@ func matrixVectorProduct(ofMatrixA A: [[Double]], withVectorX X: [Double]) -> [D
     let dx1 = A.count
     let dx2 = A[0].count
     var y  = [Double](repeating: 0, count: dx1)
-    cblas_dgemv(CblasRowMajor, CblasNoTrans,  Int32(dx1), Int32(dx2), 1.0, &a, Int32(dx2), &x, Int32(1), 1.0, &y, Int32(1))
-    let Ynew: [Double] = y
-    return Ynew
+    if #available(macOS 13.3, *) {
+        cblas_dgemv(CblasRowMajor, CblasNoTrans,  __LAPACK_int(Int32(dx1)), __LAPACK_int(Int32(dx2)), 1.0, &a, __LAPACK_int(Int32(dx2)), &x, __LAPACK_int(Int32(1)), 1.0, &y, __LAPACK_int(Int32(1)))
+        let Ynew: [Double] = y
+        return Ynew
+    } else {
+        // Log error to console or notify user
+        print("Error: This application requires macOS 13.3 or later to function properly.")
+        fatalError("Unsupported macOS version")
+    }
+    
 }
 
 func matrixVectorProduct(ofMatrixA A: [[Double]], withVectorX X: [Double], plusScaling scaling: Double, timesVector Y: [Double]) -> [Double] {
@@ -97,7 +145,7 @@ func matrixVectorProduct(ofMatrixA A: [[Double]], withVectorX X: [Double], plusS
     var y: [Double] = Y
     let dx1 = A.count
     let dx2 = A[0].count
-    cblas_dgemv(CblasRowMajor, CblasNoTrans,  Int32(dx1), Int32(dx2), 1.0, &a, Int32(dx2), &x, Int32(1), scaling, &y, Int32(1))
+    cblas_dgemv(CblasRowMajor, CblasNoTrans,  __LAPACK_int(Int32(dx1)), __LAPACK_int(Int32(dx2)), 1.0, &a, __LAPACK_int(Int32(dx2)), &x, __LAPACK_int(Double(__LAPACK_int(Int32(1)))), scaling, &y, __LAPACK_int(Int32(1)))
     let Ynew: [Double] = y
     return Ynew
 }
@@ -106,7 +154,7 @@ func matrixTimesMatrix(ofMatrix A: [[Double]], withMatrix B: [[Double]], andScal
     var a: [Double] = Array(A.joined())
     var b: [Double] = Array(B.joined())
     var c: [Double] = Array(repeating: 0.0, count: A.count * B[0].count)
-    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, Int32(A.count), Int32(B[0].count), Int32(A[0].count), alpha, &a,  Int32(A[0].count), &b, Int32(B[0].count), 0.0, &c, Int32(B[0].count))
+    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, __LAPACK_int(Int32(A.count)), __LAPACK_int(Int32(B[0].count)), __LAPACK_int(Int32(A[0].count)), alpha, &a,  __LAPACK_int(Int32(A[0].count)), &b, __LAPACK_int(Int32(B[0].count)), 0.0, &c, __LAPACK_int(Int32(B[0].count)))
     let Cnew: [[Double]] = stride(from: 0, to: c.count, by: B[0].count).map{
         Array(c[$0..<$0+B[0].count])
     }
@@ -117,7 +165,7 @@ func matrixTimesMatrixPlusC(ofMatrix A: [[Double]], withMatrix B: [[Double]], ad
     var a: [Double] = Array(A.joined())
     var b: [Double] = Array(B.joined())
     var c: [Double] = Array(C.joined())
-    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, Int32(A.count), Int32(B[0].count), Int32(A[0].count), alpha, &a,  Int32(A[0].count), &b, Int32(B[0].count),  1.0, &c, Int32(B[0].count))
+    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, __LAPACK_int(Int32(A.count)), __LAPACK_int(Int32(B[0].count)), __LAPACK_int(Int32(A[0].count)), alpha, &a,  __LAPACK_int(Int32(A[0].count)), &b, __LAPACK_int(Int32(B[0].count)),  1.0, &c, __LAPACK_int(Int32(B[0].count)))
     let Cnew: [[Double]] = stride(from: 0, to: c.count, by: B[0].count).map{
         Array(c[$0..<$0+B[0].count])
     }
@@ -167,10 +215,10 @@ func transposeMatrix(ofMatrix matrix:[[Double]] ) -> [[Double]] {
 func invertMatrix(ofMatrix matrix : [[Double]]) -> [[Double]] {
     let c: [Double] = Array(matrix.joined())
     var inMatrix: [Double]  = Array(matrix.joined())
-    var N = __CLPK_integer(sqrt(Double(c.count)))
-    var pivots = [__CLPK_integer](repeating: 0, count: Int(N))
+    var N = __LAPACK_int(sqrt(Double(c.count)))
+    var pivots = [__LAPACK_int](repeating: 0, count: Int(N))
     var workspace = [Double](repeating: 0.0, count: Int(N))
-    var error : __CLPK_integer = 0
+    var error : __LAPACK_int = 0
     
     withUnsafeMutablePointer(to: &N) {
         dgetrf_($0, $0, &inMatrix, $0, &pivots, &error)
@@ -205,39 +253,40 @@ func invertComplexMatrix(ofRealMatrix A : [[Double]], andofImagMatrix B: [[Doubl
 //    return
 //}
 
+@available(macOS 13.3, *)
 func eigensystem(ofMatrix matrix: [[Double]]) -> (eigenvaluesRe: [Double], eigenvaluesIm: [Double], rightEigenvectors: [[Double]]) {
-    var mat: [__CLPK_doublereal] = Array(matrix.joined())
+    var mat: [Double] = Array(matrix.joined())
     
-    var N = __CLPK_integer(sqrt(Double(mat.count)))
+    var N = __LAPACK_int(sqrt(Double(mat.count)))
     var N1 = N
     var N2 = N
     var N3 = N
     //var workspaceQuery = [Double](repeating: 0.0, count: 1)
-    var error : __CLPK_integer = 0
-    var lwork = __CLPK_integer(-1)
+    var error : __LAPACK_int = 0
+    var lwork = __LAPACK_int(-1)
     // Real parts of eigenvalues
     var wr = [Double](repeating: 0, count: Int(N)    )
     // Imaginary parts of eigenvalues
     var wi = [Double](repeating: 0, count: Int(N))
     // Left eigenvectors
-    var vl = [__CLPK_doublereal](repeating: 0, count: Int(N*N))
+    var vl = [Double](repeating: 0, count: Int(N*N))
     // Right eigenvectors
-    var vr = [__CLPK_doublereal](repeating: 0, count: Int(N*N))
+    var vr = [Double](repeating: 0, count: Int(N*N))
     var workspaceQuery: Double = 0.0
 
     let strrr = UnsafeMutablePointer<Int8>(mutating: ("V" as NSString).utf8String)
 
     //UnsafeMutablePointer(("V" as NSString).utf8CString)
-    dgeev_(strrr, strrr, &N, &mat, &N1, &wr, &wi, &vl, &N2, &vr, &N3, &workspaceQuery, &lwork, &error)
+    dgeev_(strrr!, strrr!, &N, &mat, &N1, &wr, &wi, &vl, &N2, &vr, &N3, &workspaceQuery, &lwork, &error)
     
     
     print("workspaceQuery: \(workspaceQuery)")
     // size workspace per the results of the query:
     var workspace = [Double](repeating: 0.0, count: Int(workspaceQuery))
 //    var workspace = [Double](repeating: 0.0, count: 1400)
-    lwork = __CLPK_integer(workspace.count)
+    lwork = __LAPACK_int(workspace.count)
 
-    dgeev_(strrr, strrr, &N, &mat, &N1, &wr, &wi, &vl, &N2, &vr, &N3, &workspace, &lwork, &error)
+    dgeev_(strrr!, strrr!, &N, &mat, &N1, &wr, &wi, &vl, &N2, &vr, &N3, &workspace, &lwork, &error)
     
 
    
@@ -270,17 +319,17 @@ func singularValueDecomposition(ofMatrix A: [[Double]]) -> (U: [Double], s: [Dou
     var jobz1: Int8 = 65 // 'A'
     var jobz2 = jobz1
     
-    var m = __CLPK_integer(A.count)
-    var n = __CLPK_integer(A[0].count)
+    var m = __LAPACK_int(A.count)
+    var n = __LAPACK_int(A[0].count)
     
     var lda = m
     var ldu = m
     var ldvt = n
     
     // Allocate workspace size variables. By specifying an lWork of -1, we let LAPACK compute the optimal workspace.
-    var wkOpt = __CLPK_doublereal(0.0)
-    var lWork = __CLPK_integer(-1)
-    var info = __CLPK_integer(0)
+    var wkOpt = Double(0.0)
+    var lWork = __LAPACK_int(-1)
+    var info = __LAPACK_int(0)
     //var iWork = [__CLPK_integer](repeating: 0, count: Int(8 * min(m, n)))
     
     // Create the output vectors and matrices
@@ -296,7 +345,7 @@ func singularValueDecomposition(ofMatrix A: [[Double]]) -> (U: [Double], s: [Dou
     //sgesdd_(&jobz, &m, &n, &_A.grid, &lda, &s, &U.grid, &ldu, &VT.grid, &ldvt, &wkOpt, &lWork, &iWork, &info)
    
     // Create the relevant workspace and update lWork to 0
-    lWork = __CLPK_integer(wkOpt)
+    lWork = __LAPACK_int(wkOpt)
     var work = [Double](repeating: 0.0, count: Int(lWork))
     
     // Compute SVD. There are two possible lapack functions that work equally well?
@@ -310,9 +359,9 @@ func singularValueDecomposition(ofMatrix A: [[Double]]) -> (U: [Double], s: [Dou
 }
 
 func linearSolve(ofMatrix matrix: [[Double]], andVector vector: [Double]) -> [Double] {
-    typealias LAInt = __CLPK_integer
-    var mat: [__CLPK_doublereal] = Array(matrix.joined())
-    var b:[__CLPK_doublereal] = vector
+    typealias LAInt = __LAPACK_int
+    var mat: [Double] = Array(matrix.joined())
+    var b:[Double] = vector
     
     let equationsInt =  vector.count
     let equations =  LAInt(vector.count)
@@ -327,4 +376,3 @@ func linearSolve(ofMatrix matrix: [[Double]], andVector vector: [Double]) -> [Do
     
     return b
 }
-
