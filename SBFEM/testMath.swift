@@ -15,7 +15,7 @@ func mathTest() {
     
     let start = DispatchTime.now() // <<<<<<<<<< Start time
     
-    let res:[Double] = vectorAdd(ofVectorX: [1, 2, 3], withVectorY: [3, 4, 5 ])
+    let res:[Double] = vectorAdd(ofVectorX: [1, 2, 3], withVectorY: [3, 4, -5 ])
     
     let end = DispatchTime.now()   // <<<<<<<<<<   end time
     

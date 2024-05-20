@@ -12,6 +12,26 @@ import Accelerate
 import simd
 import Darwin
 
+// MARK: - CLASS STRUCTURE
+
+/// The main SBFEM model class
+class model {
+    
+    /// node class
+    class node {
+        
+    }
+    
+    /// element class
+    class element {
+        
+    }
+}
+
+
+
+
+
 // MARK: - MATH TESTS
 print("------------------")
 print("---MATH TEST------")
@@ -24,13 +44,14 @@ let eps64 = Double.ulpOfOne
 print("EPS 64 = \(eps64)")
 print("------------------")
 
+
 /// spatial Dimension
 let sd = 2
 /// polynominal Order
 let polyOrd = 1
 /// number of elements
 let ielem = 10
-/// number of nodes per element
+/// number of nodes per element 
 let nodeElem = 2
 /// number of all nodes in the domain
 let nodeDim = 10
@@ -214,7 +235,11 @@ let zMat = zMatFct(ofCoeffMatrixE0: e0, andCoeffMatrixE1: e1, andCoeffMatrixE3: 
 //printMatrixDimensions(ofMatrix: zMat)
 //print("")
 //print("")
-let (valRe, valIm ,vec2) = eigensystem(ofMatrix: zMat)
+if #available(macOS 13.3, *) {
+    let (valRe, valIm ,vec2) = eigensystem(ofMatrix: zMat)
+} else {
+    // Fallback on earlier versions
+}
 //let valIm = eigensystem(ofMatrix: zMat).eigenvaluesIm
 //let vec = transposeMatrix(ofMatrix: eigensystem(ofMatrix: zMat).rightEigenvectors)
 //let vec = eigensystem(ofMatrix: zMat).rightEigenvectors

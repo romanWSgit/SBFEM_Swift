@@ -1,0 +1,9 @@
+"/Users/roman_w_s/Developer/SWIFT/SBFEM/SBFEM/material.swift":
+  dependencies: "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master.d"
+  abi-baseline-json: "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM.abi.json"
+  diagnostics: "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master.dia"
+  swiftmodule: "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM.swiftmodule"
+  swiftdoc: "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM.swiftdoc"
+  const-values: "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-master.swiftconstvalues"
+  swiftsourceinfo: "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM.swiftsourceinfo"
+  objc-header: "/Users/roman_w_s/Developer/SWIFT/SBFEM/build/SBFEM.build/Release/SBFEM.build/Objects-normal/arm64/SBFEM-Swift.h"
